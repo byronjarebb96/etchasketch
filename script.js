@@ -27,17 +27,16 @@ function generateBoard(rows=16, columns=16){
         square.style.height = `${(600/columns)}px`;
         //square.textContent = `${i+1}`;
         container.appendChild(square);
-        squares = document.querySelectorAll('.square');
-        squares.forEach(sq => sq.addEventListener('mouseenter', transformSquare))
+    } 
+    squares = document.querySelectorAll('.square');
+    squares.forEach(sq => sq.addEventListener('mouseover', transformSquare))
 
-    }    
 
 }
 let squares = document.querySelectorAll('.square');
-squares.forEach(sq => sq.addEventListener('click', transformSquare))
 
 const setupBtn = document.querySelector('#setup');
-setupBtn.addEventListener('click', () => setupBoard())
+setupBtn.addEventListener('click', () => setupBoard());
 
 const button = document.querySelector('#reset');
 button.addEventListener('click', () => resetBoard());
