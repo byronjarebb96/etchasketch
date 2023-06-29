@@ -1,15 +1,17 @@
 const body = document.querySelector('body')
 const container = document.querySelector("#container");
-function transformSquare(e){
+
+function transformSquare(e)
+{
     e.target.classList.add('transformedSquare');
 
 }
 function resetBoard(){
     squares.forEach(sq => sq.classList.remove('transformedSquare'))
 }
-let rows = 48;
-let columns = 48;
-function setupBoard(){
+
+function setupBoard()
+{
     rows = prompt("Set rows:");
     columns = prompt("Set columns:");
     if(!squares==0){
@@ -18,9 +20,10 @@ function setupBoard(){
     }
     generateBoard(rows, columns)
 }
-function generateBoard(rows=16, columns=16){
- 
-    for (let i = 0; i < (rows * columns); i++){
+
+function generateBoard(rows=16, columns=16)
+{ 
+    for (let i = 0; i < rows*columns; i++){
         const square = document.createElement('div');
         square.classList.add('square');
         square.style.width = `${(600/rows)}px`;
